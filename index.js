@@ -1,13 +1,42 @@
 var Hapi = require('hapi');
 var Good = require('good');
+var Path = require('path');
+var Inert = require('inert');
+
 var search = require('./lib/search.js');
 var package = require('./lib/package.js');
 
-var server = new Hapi.Server();
-server.connection({ port: 5000 });
+var server = new Hapi.Server({
+  connections: {
+    routes: {
+      files: {
+        relativeTo: Path.join(__dirname, 'public')
+      }
+    }
+  }
+});
+
+server.connection({
+  host: '0.0.0.0', 
+  port: ~~process.env.PORT || 5000,
+});
+
+server.register(Inert, function () {});
 
 server.route(search);
 server.route(package);
+
+server.route({
+  method: 'GET',
+  path: '/assets/{param*}',
+  handler: {
+    directory: {
+      path: '.',
+      redirectToSlash: true,
+      index: true
+    }
+  }
+});
 
 server.register({
   register: Good,

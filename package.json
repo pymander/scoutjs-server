@@ -13,6 +13,7 @@
     "good": "^6.3.0",
     "good-console": "^5.0.2",
     "hapi": "^9.0.1",
+    "inert": "^3.0.1",
     "joi": "^6.6.1",
     "lodash": "^3.10.1",
     "orchestrate": "^0.4.7"
