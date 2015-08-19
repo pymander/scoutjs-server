@@ -9,6 +9,7 @@ var package = require('./lib/package.js');
 var server = new Hapi.Server({
   connections: {
     routes: {
+      cors: true,
       files: {
         relativeTo: Path.join(__dirname, 'public')
       }
