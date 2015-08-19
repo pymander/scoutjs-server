@@ -1,0 +1,5 @@
+--- 
+applications: 
+- name: npf-server 
+  memory: 256M 
+  command: npm start
