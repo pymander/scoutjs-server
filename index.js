@@ -29,8 +29,8 @@ server.route(package);
 
 server.route({
   method: 'GET',
-  path: '/assets/{param*}',
-  handler: {
+  path: '/{path*}',
+  handler:  {
     directory: {
       path: '.',
       redirectToSlash: true,
@@ -38,6 +38,18 @@ server.route({
     }
   }
 });
+
+// server.route({
+//   method: 'GET',
+//   path: '/assets/{param*}',
+//   handler: {
+//     directory: {
+//       path: '.',
+//       redirectToSlash: true,
+//       index: true
+//     }
+//   }
+// });
 
 server.register({
   register: Good,
