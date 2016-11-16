@@ -8,14 +8,16 @@
     "start": "node index.js"
   },
   "author": "Asa Miller <asa@tinycreative.com> (http://tinycreative.com)",
+  "repository": "https://github.com/pymander/scoutjs-server",
   "license": "MIT",
   "dependencies": {
     "good": "^6.3.0",
     "good-console": "^5.0.2",
     "hapi": "^9.0.1",
     "inert": "^3.0.1",
-    "joi": "^6.6.1",
+    "joi": "^9.2.0",
     "lodash": "^3.10.1",
-    "mongodb": "^2.2.11"
+    "mongodb": "^2.2.11",
+    "q": "^1.4.1"
   }
 }
